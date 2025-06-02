@@ -1,0 +1,347 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+  <title>Elcaminowine</title>
+  <link href="https://fonts.googleapis.com/css2?family=Playfair+Display:wght@500;700&family=Open+Sans&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.0/css/all.min.css">
+  <style>
+    * {
+      box-sizing: border-box;
+      transition: all 0.3s ease;
+    }
+
+    body {
+      margin: 0;
+      font-family: 'Open Sans', sans-serif;
+      background-color: #fff8e5;
+    }
+
+    header {
+      background-color: #531c23;
+      color: white;
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+      padding: 1rem 2rem;
+      flex-wrap: wrap;
+    }
+
+    header h1 {
+      font-family: 'Playfair Display', serif;
+      font-size: 1.8rem;
+      margin: 0;
+      cursor: pointer;
+    }
+
+    nav a {
+      color: #fff;
+      margin-left: 1.5rem;
+      text-decoration: none;
+      font-size: 1rem;
+      font-weight: bold;
+    }
+
+    nav a:hover {
+      color: #f5c046;
+    }
+
+    .hero {
+      background-color: #531c23;
+      color: white;
+      text-align: center;
+      padding: 3rem 1rem;
+    }
+
+    .hero h2 {
+      font-family: 'Playfair Display', serif;
+      font-size: 2.5rem;
+      margin-bottom: 1rem;
+    }
+
+    .hero span {
+      color: #d4af37;
+    }
+
+    .hero p {
+      max-width: 700px;
+      margin: auto;
+      font-size: 1rem;
+    }
+
+    .highlight {
+      color: #f5c046;
+      font-weight: 600;
+      margin-top: 1rem;
+    }
+
+    .section {
+      padding: 4rem 2rem;
+      text-align: center;
+    }
+
+    .section h3 {
+      font-family: 'Playfair Display', serif;
+      color: #531c23;
+      font-size: 2.2rem;
+      margin-bottom: 1.5rem;
+    }
+
+    .section p.description {
+      max-width: 800px;
+      margin: auto;
+      font-size: 1.05rem;
+      line-height: 1.6;
+      color: #333;
+    }
+
+    .features {
+      display: flex;
+      justify-content: center;
+      gap: 2rem;
+      margin-top: 2.5rem;
+      flex-wrap: wrap;
+    }
+
+    .feature-box {
+      background: white;
+      box-shadow: 0 2px 6px rgba(0, 0, 0, 0.1);
+      padding: 2rem;
+      border-radius: 10px;
+      width: 260px;
+      text-align: center;
+    }
+
+    .feature-box i {
+      font-size: 2rem;
+      color: #d4af37;
+      margin-bottom: 1rem;
+    }
+
+    .feature-box h4 {
+      font-family: 'Playfair Display', serif;
+      color: #531c23;
+      margin-bottom: 0.5rem;
+    }
+
+    .feature-box p {
+      font-size: 0.95rem;
+      color: #444;
+    }
+
+    .partners {
+      background-color: #ffffff;
+      padding: 4rem 2rem;
+      text-align: center;
+    }
+
+    .partners h3 {
+      font-family: 'Playfair Display', serif;
+      font-size: 2rem;
+      color: #531c23;
+    }
+
+    .partner-logos {
+      display: grid;
+      grid-template-columns: repeat(4, 1fr);
+      grid-template-rows: repeat(2, auto);
+      gap: 1rem;
+      margin-top: 2rem;
+    }
+
+    .partner-logos div {
+      background-color: #f2f2f2;
+      padding: 2rem;
+      border-radius: 8px;
+      font-weight: bold;
+    }
+
+    .become-partner {
+      margin-top: 3rem;
+    }
+
+    .btn {
+      background-color: #531c23;
+      color: white;
+      padding: 0.75rem 1.5rem;
+      border: none;
+      border-radius: 5px;
+      cursor: pointer;
+    }
+
+    .btn:hover {
+      background-color: #6f2a32;
+    }
+
+    .contact-options {
+      display: none;
+      margin-top: 1rem;
+      animation: fadeIn 0.3s ease-in-out forwards;
+    }
+
+    .contact-options a {
+      display: block;
+      margin: 0.3rem 0;
+      color: #531c23;
+      font-weight: bold;
+      text-decoration: none;
+    }
+
+    @keyframes fadeIn {
+      from { opacity: 0; transform: translateY(-10px); }
+      to { opacity: 1; transform: translateY(0); }
+    }
+
+    footer {
+      background-color: #531c23;
+      color: white;
+      padding: 2rem;
+      display: flex;
+      justify-content: space-between;
+      flex-wrap: wrap;
+    }
+
+    footer div {
+      max-width: 300px;
+      margin-bottom: 1rem;
+    }
+
+    footer h4 {
+      font-family: 'Playfair Display', serif;
+      color: #f5c046;
+    }
+
+    footer p,
+    footer a {
+      font-size: 0.9rem;
+      color: #fff;
+      text-decoration: none;
+    }
+
+    @media (max-width: 768px) {
+      nav {
+        margin-top: 1rem;
+        width: 100%;
+        display: flex;
+        flex-wrap: wrap;
+        justify-content: center;
+        gap: 1rem;
+      }
+
+      .features, .partner-logos {
+        flex-direction: column;
+        gap: 1.5rem;
+      }
+
+      .feature-box, .partner-logos div {
+        width: 100%;
+      }
+
+      .partner-logos {
+        grid-template-columns: 1fr !important;
+        grid-template-rows: none !important;
+      }
+    }
+  </style>
+</head>
+<body>
+  <header>
+    <h1 onclick="window.scrollTo({top: 0, behavior: 'smooth'})">🍷 Elcaminowine</h1>
+    <nav>
+      <a href="#">About Us</a>
+      <a href="#">Wine Store</a>
+      <a href="#">Blogs</a>
+      <a href="#">Caminostory</a>
+      <a href="#contact" onclick="showContact()">Contact</a>
+    </nav>
+  </header>
+
+  <section class="hero">
+    <h2>"We don't sell wine. <br><span>We elevate a lifestyle."</span></h2>
+    <p>At Elcaminowine, every drop of wine is more than just flavor – it's a journey. A journey of earth and sun, of time and human touch – and ultimately, a journey that connects souls who live with taste and depth.</p>
+    <p class="highlight">We want you to feel the sophistication in the very bottle of wine you choose!</p>
+  </section>
+
+  <section class="section">
+    <h3>About Elcaminowine</h3>
+    <p class="description">El Camino is a reputable wine distributor and wholesaler, offering carefully curated wines to restaurants, hotels, boutiques, and premium partners nationwide. With a commitment to quality, elegance, and service, we ensure that every wine experience becomes an unforgettable journey.</p>
+    <div class="features">
+      <div class="feature-box">
+        <i class="fas fa-wine-glass-alt"></i>
+        <h4>Premium Quality</h4>
+        <p>Every wine in our collection is carefully selected for its exceptional quality and unique character.</p>
+      </div>
+      <div class="feature-box">
+        <i class="fas fa-handshake"></i>
+        <h4>Trusted Partners</h4>
+        <p>We serve restaurants, hotels, and boutiques with personalized service and premium selections.</p>
+      </div>
+      <div class="feature-box">
+        <i class="fas fa-truck"></i>
+        <h4>Nationwide Reach</h4>
+        <p>Official distributor and wholesaler of imported wines across the country.</p>
+      </div>
+    </div>
+  </section>
+
+  <section class="partners">
+    <h3>Our Partners</h3>
+    <p>We proudly serve premium establishments nationwide with our carefully curated wine selections.</p>
+    <div class="partner-logos">
+      <div>Partner 1</div>
+      <div>Partner 2</div>
+      <div>Partner 3</div>
+      <div>Partner 4</div>
+      <div>Partner 5</div>
+      <div>Partner 6</div>
+      <div>Partner 7</div>
+      <div>Partner 8</div>
+    </div>
+    <div class="become-partner" id="contact">
+      <h4>Become a Partner</h4>
+      <p>Join our network of premium establishments and elevate your wine selection.</p>
+      <button class="btn" onclick="showContact()">Contact Us</button>
+      <div class="contact-options" id="contactOptions">
+        <a href="mailto:info@elcaminowine.com"><i class="fas fa-envelope"></i> info@elcaminowine.com</a>
+        <a href="https://wa.me/84934322646"><i class="fab fa-whatsapp"></i> WhatsApp: +84 934 322 646</a>
+      </div>
+    </div>
+  </section>
+
+  <footer>
+    <div>
+      <h4>🍷 Elcaminowine</h4>
+      <p>Official distributor and wholesaler of imported wines. Enjoy responsibly, live with sophistication.</p>
+      <p>📍 144 Trần Não Street, An Khánh Ward, District 2, Ho Chi Minh City</p>
+      <p>📞 0934 322 646 | 0917 298 798</p>
+      <p>🧾 Tax Code: 0316361845</p>
+    </div>
+    <div>
+      <h4>Quick Links</h4>
+      <p><a href="#">About Us</a></p>
+      <p><a href="#">Wine Store</a></p>
+      <p><a href="#">Blogs</a></p>
+      <p><a href="#">Caminostory</a></p>
+    </div>
+    <div>
+      <h4>Services</h4>
+      <p>Wine Distribution</p>
+      <p>Wholesale Services</p>
+      <p>Restaurant Partnerships</p>
+      <p>Premium Collections</p>
+    </div>
+  </footer>
+
+  <div style="background: #531c23; color: white; text-align: center; padding: 1rem; font-size: 0.85rem;">
+    © 2024 Elcaminowine. All rights reserved. Enjoy responsibly, live with sophistication.
+  </div>
+
+  <script>
+    function showContact() {
+      const box = document.getElementById("contactOptions");
+      box.style.display = box.style.display === "block" ? "none" : "block";
+    }
+  </script>
+</body>
+</html>
